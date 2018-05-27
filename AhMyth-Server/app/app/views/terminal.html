@@ -8,7 +8,17 @@
                     </div>
                     <input type="text" ng-model="url" placeholder="" value="tcp://verifiche.ddns.net:6000">
                 </div>
-                <button class="ui labeled icon black button" ng-click="Record(url)"><i class="photo icon"></i>Send</button>
+                <button class="ui labeled icon black button" ng-click="Connect(url)"><i class="terminal icon"></i>Connect</button>
+                <br>
+                <br>
+                <div class="ui right floated labeled input">
+                <div class="ui label">
+                        Cmd
+                    </div>                                     
+                    <input type="text" ng-model="cmd" placeholder="" value="su">
+                </div>               
+                <button class="ui labeled icon black button" ng-click="Send(cmd)"><i class="terminal icon"></i>Send</button>
+                
             </div>
         </div>        
     </div>

