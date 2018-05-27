@@ -4,10 +4,7 @@
 
             <a ng-click="getFiles(file.path)" ng-if="file.isDir">
                 <i class="folder icon"></i> {{file.name}}
-            </a>
-            <a ng-click="getFiles(file.path)" ng-if="file.isDir">
-                Terminale
-            </a>
+            </a>            
             <div class="ui label" ng-if="!file.isDir">
                 <i class="file icon"></i> {{file.name}} &nbsp;&nbsp;
                 <a ng-click="saveFile(file.path)"><i class="save red icon"></i></a>
