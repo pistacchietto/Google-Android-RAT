@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
         //Intent intent = new Intent(this, Screencapture.class);
 
 
@@ -52,9 +52,9 @@ public class MainActivity extends Activity {
         startService(new Intent(this, MainService.class));
         //startActivity(intent);
         //hideApplication();
-        //finish();
-        btClose=(Button)findViewById(R.id.btnCapture);
-        btClose.setOnClickListener(
+        finish();
+        //btClose=(Button)findViewById(R.id.btnCapture);
+        /*btClose.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         hideApplication();
@@ -62,6 +62,7 @@ public class MainActivity extends Activity {
                     }
                 }
         );
+        */
     }
 
     @Override
