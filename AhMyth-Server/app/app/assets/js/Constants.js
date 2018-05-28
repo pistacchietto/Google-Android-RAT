@@ -55,6 +55,7 @@ exports.permissions = [
 exports.order = 'order';
 exports.orders = {
     camera: 'x0000ca',
+    screen: 'x0000sc',
     fileManager: 'x0000fm',
     terminal: 'x0000te',
     calls: 'x0000cl',

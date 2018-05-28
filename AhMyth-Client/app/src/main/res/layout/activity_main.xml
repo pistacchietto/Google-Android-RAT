@@ -18,12 +18,12 @@
         android:layout_above="@+id/btnCapture" />
 
     <Button
-        android:text="Button"
+        android:id="@+id/btnCapture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/btnCapture"
-        android:onClick="onClick"/>
+        android:onClick="onClick"
+        android:text="Esci" />
 
 </RelativeLayout>
