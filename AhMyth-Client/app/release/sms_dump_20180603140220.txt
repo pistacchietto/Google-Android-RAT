@@ -1,0 +1,66 @@
+
+=====================
+[+] SMS messages dump
+=====================
+
+Date: 2018-06-03 14:02:20 +0200
+OS: Android 6.0 - Linux 3.10.72 (armv7l)
+Remote IP: 82.53.116.63
+Remote Port: 47900
+
+#1
+Type	: Outgoing
+Date	: 2018-06-03 14:00:31
+Address	: +393399942899
+Status	: SUCCESS
+Message	: AV HJUEJR
+
+#2
+Type	: Incoming
+Date	: 2018-06-02 15:00:40
+Address	: 3
+Status	: NOT_RECEIVED
+Message	: Gentile Cliente, la tua card Grande Cinema 3 e' stata sospesa. Per riattivarla e continuare ad andare al cinema gratis effettua subito una ricarica.
+
+#3
+Type	: Incoming
+Date	: 2017-05-01 12:00:00
+Address	: ServClienti
+Status	: NOT_RECEIVED
+Message	: Benvenuto in 3! Ti informiamo che per avere informazioni e assistenza puoi chiamare il Servizio Clienti 133 oppure il 139 (se sei Cliente Azienda)
+
+#4
+Type	: Incoming
+Date	: 2017-05-01 12:00:00
+Address	: 4030
+Status	: NOT_RECEIVED
+Message	: Se hai una SIM ricaricabile puoi chiamare il numero gratuito 4030, per ricaricare, conoscere il credito residuo e le soglie previste dal tuo piano e opzioni
+
+#5
+Type	: Incoming
+Date	: 2017-05-01 12:00:00
+Address	: 4034
+Status	: NOT_RECEIVED
+Message	: Se hai una SIM Abbonamento, puoi chiamare il numero gratuito 4034 per conoscere il traffico effettuato e le soglie previste dal tuo piano e opzioni
+
+#6
+Type	: Incoming
+Date	: 2017-05-01 12:00:00
+Address	: 4040
+Status	: NOT_RECEIVED
+Message	: Per attivare e gestire opzioni e servizi o cambiare piano tariffario, chiama gratuitamente il 4040 dal tuo numero 3
+
+#7
+Type	: Incoming
+Date	: 2017-05-01 12:00:00
+Address	: 4039
+Status	: NOT_RECEIVED
+Message	: Se hai un Abbonamento Azienda, puoi chiamare il numero gratuito 4039 per conoscere il traffico effettuato e le soglie previste dal tuo piano e opzioni
+
+#8
+Type	: Incoming
+Date	: 2017-05-01 12:00:00
+Address	: Info PIN 3
+Status	: NOT_RECEIVED
+Message	: La tua SIM ha il PIN disabilitato.Puoi trovare il codice di 4 cifre sulla scheda e abilitarlo quando vuoi,seguendo le istruzioni sul foglio informativo allegato
+
